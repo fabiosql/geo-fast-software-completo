@@ -1,3 +1,3 @@
 # geolocalizacao-arduino-laravel
 
-Projeto em desenvolvimento. Acompanhe pela Wiko
+Projeto em desenvolvimento. Acompanhe pela Wiki
