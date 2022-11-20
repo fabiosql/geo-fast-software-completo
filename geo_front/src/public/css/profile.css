@@ -1,0 +1,74 @@
+#picture-collage-private .badge.badge-picture-premium {
+    background: #161b28a1;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 9px;
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+}
+#picture-collage-private .badge.badge-picture-premium:hover{
+    background-color: black;
+}
+
+#picture-collage-private .badge.badge-picture-premium img{
+    margin-right:5px;
+}
+
+#picture-collage-private img.icon-preview-lock{
+    width:50px
+}
+
+#picture-collage-private .photo-preview {
+    display: grid !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-image: url("../img/photos/private_1000x1000_1.png");
+}
+
+#widget-creator-plans .plan{
+    color: white;
+    padding: 15px 10px;
+    border-bottom: 1px solid #2293df54;
+}
+
+#widget-creator-plans .plan:last-child{
+    border-bottom: none;
+}
+
+#widget-creator-plans .plan .title-plan{
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#widget-creator-plans .plan .title-plan .tag-discount{
+    margin-left: 6px;
+}
+
+#widget-creator-plans .plan .btn-trigger-subscription {
+    background: #2293df;
+    color: white;
+    border: 2px solid #2293df;
+    padding: 7px;
+    margin-top: 5px;
+}
+
+#widget-creator-plans .plan .btn-trigger-subscription:hover{
+    background-color: #2293df;
+}
+
+#widget-creator-plans .plan .instant-access{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#section-profile-packs,
+#section-profile-packs .section-header{
+    margin-top: 30px !important;
+}
+
+#section-profile-packs .section-header .section-title{
+    margin-top: 0 !important;
+}
