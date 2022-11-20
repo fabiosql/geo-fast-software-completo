@@ -4,9 +4,6 @@
 /.pnp
 .pnp.js
 
-.env
-
-
 # testing
 /node_modules
 /.idea
