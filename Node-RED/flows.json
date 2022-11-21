@@ -1,0 +1,180 @@
+[
+    {
+        "id": "833f8ba7f96f62f7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ead8378f48b6bd0a",
+        "type": "mqtt out",
+        "z": "833f8ba7f96f62f7",
+        "name": "",
+        "topic": "geofast_db5b410e-fabd-4361-a10e-547a7f9495dd",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c95fd1fdd1e511f2",
+        "x": 610,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ef314e2e800c7f33",
+        "type": "mqtt in",
+        "z": "833f8ba7f96f62f7",
+        "name": "",
+        "topic": "geofast_db5b410e-fabd-4361-a10e-547a7f9495dd",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c95fd1fdd1e511f2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "c671e127e0ec0b01"
+            ]
+        ]
+    },
+    {
+        "id": "8dcca4a24213edd2",
+        "type": "inject",
+        "z": "833f8ba7f96f62f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 260,
+        "wires": [
+            [
+                "ead8378f48b6bd0a"
+            ]
+        ]
+    },
+    {
+        "id": "c671e127e0ec0b01",
+        "type": "function",
+        "z": "833f8ba7f96f62f7",
+        "name": "function 1",
+        "func": "msg.url = \"http://54.226.159.246/api/vehicle/locations/add/\" + msg.payload.token + \"?lat=\" + msg.payload.lat + \"&lng=\"+msg.payload.lng;\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "5d4c1881af3c3ac5"
+            ]
+        ]
+    },
+    {
+        "id": "79132381cb86ab65",
+        "type": "debug",
+        "z": "833f8ba7f96f62f7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5d4c1881af3c3ac5",
+        "type": "http request",
+        "z": "833f8ba7f96f62f7",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "79132381cb86ab65"
+            ]
+        ]
+    },
+    {
+        "id": "c95fd1fdd1e511f2",
+        "type": "mqtt-broker",
+        "name": "simen",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "tls": "ce85d5ba25c8028f",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ce85d5ba25c8028f",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "6ea5730fa78cc123cd41b90116698eb37827fe825681c3354a62c3b0204aaa54-certificate.pem.crt",
+        "keyname": "6ea5730fa78cc123cd41b90116698eb37827fe825681c3354a62c3b0204aaa54-private.pem.key",
+        "caname": "AmazonRootCA1.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
