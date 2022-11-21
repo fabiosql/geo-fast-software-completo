@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF  } from '@react-google-maps/api';
 import { Button, useUpdateEffect } from '@chakra-ui/react';
+import { env } from 'process';
 
 const containerStyle = {
     width: '100%',
@@ -25,7 +26,7 @@ function MapsFrame({positions}: IPositions) {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyA78LdLSxdd-eiKCmgQi1kfvMZlTX2FKlo"
+        googleMapsApiKey: "KEY"
     })
 
     const [map, setMap] = React.useState<google.maps.Map | null>(null)
