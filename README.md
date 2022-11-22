@@ -6,5 +6,6 @@ Disponível nesse repositório:
 - Código do Front-end e back-end do sistema web desenvolvido.
 - Sketch do ESP32 para o envio da geolocalização
 - Flow do node-red utilizado no projeto
+- Diagrama de Classes da API
 
 ![GeoFast](https://i.ibb.co/JRLfS09/Capturar.png)
